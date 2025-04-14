@@ -4,10 +4,7 @@
   "description": "Your notebook in cloud",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "frontend": "cd ../inotebook_frontend && npm start",
-    "backend": "nodemon index.js",
-    "both": "concurrently \"npm run backend\" \"npm run frontend\""
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

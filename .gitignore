@@ -39,3 +39,19 @@ inotebook_frontend/build
 *.log
 .vscode
 coverage
+
+# Ignore node_modules and build artifacts
+node_modules
+build
+
+# Ignore environment files
+.env
+
+# Ignore logs
+*.log
+
+# Ignore system files
+.DS_Store
+
+# Ignore IDE files
+.vscode
