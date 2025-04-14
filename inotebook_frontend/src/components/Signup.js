@@ -9,10 +9,11 @@ const Signup = (props) => {
     cpassword: "",
   });
   let navigate = useNavigate();
+  let host = process.env.REACT_APP_HOST;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:4000/api/auth/signup", {
+    const response = await fetch(`${host}/api/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
