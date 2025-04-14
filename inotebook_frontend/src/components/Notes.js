@@ -44,10 +44,11 @@ const Notes = (props) => {
   };
   const textColor = props.mode === "dark" ? "white" : "black";
   // Modal & input styles based on mode
-  const modalStyle = {
-    backgroundColor: props.mode === "dark" ? "#7e7e7e6b" : "white",
-    color: props.mode === "dark" ? "white" : "black",
-  };
+const modalStyle = {
+  backgroundColor: props.mode === "dark" ? "#1e1e1e" : "white",
+  color: props.mode === "dark" ? "white" : "black",
+  border: "1px solid #444", // optional for contrast
+};
 
   const inputStyle = {
     backgroundColor: "#7e7e7e6b",
