@@ -11,7 +11,8 @@ const Notes = (props) => {
   const { notes, getNotes, editNote } = context;
 
   useEffect(() => {
-    if (Cookies.get("token")) {
+    // Revert to using localStorage for auth token
+    if (localStorage.getItem("token")) {
       getNotes();
     } else {
       navigate("/login");

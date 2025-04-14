@@ -79,7 +79,7 @@ const Navbar = ({ mode, toggleMode }) => {
             </label>
           </div>
 
-          {!Cookies.get("token") ? (
+          {!localStorage.getItem("token") ? (
             <form className="d-flex">
               <Link className={`btn ${btnColor} mx-1`} to="/login" role="button">
                 Login

@@ -20,8 +20,9 @@ const Login = (props) => {
     });
     const json = await response.json();
 
+    // Revert to using localStorage for auth token
     if (json && json.success) {
-      Cookies.set('token', json.authToken, { expires: 7 }); // Save token in cookies for 7 days
+      localStorage.setItem("token", json.authToken); // Save token in localStorage
       navigate("/");
       props.showAlert("Logged in successfully", "success");
     } else {
