@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const Navbar = ({ mode, toggleMode }) => {
   let navigate = useNavigate();
@@ -78,7 +79,7 @@ const Navbar = ({ mode, toggleMode }) => {
             </label>
           </div>
 
-          {!localStorage.getItem("token") ? (
+          {!Cookies.get("token") ? (
             <form className="d-flex">
               <Link className={`btn ${btnColor} mx-1`} to="/login" role="button">
                 Login

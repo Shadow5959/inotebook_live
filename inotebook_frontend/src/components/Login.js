@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -20,7 +21,7 @@ const Login = (props) => {
     const json = await response.json();
 
     if (json && json.success) {
-      localStorage.setItem("token", json.authToken);
+      Cookies.set('token', json.authToken, { expires: 7 }); // Save token in cookies for 7 days
       navigate("/");
       props.showAlert("Logged in successfully", "success");
     } else {

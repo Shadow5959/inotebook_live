@@ -3,6 +3,7 @@ import noteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const Notes = (props) => {
   const context = useContext(noteContext);
@@ -10,7 +11,7 @@ const Notes = (props) => {
   const { notes, getNotes, editNote } = context;
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (Cookies.get("token")) {
       getNotes();
     } else {
       navigate("/login");

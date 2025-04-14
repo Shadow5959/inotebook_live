@@ -1,5 +1,6 @@
 import { useState } from "react";
 import noteContext from "./noteContext";
+import Cookies from 'js-cookie';
 
 const NoteState = (props) => {
   const host = process.env.REACT_APP_HOST;
@@ -13,8 +14,8 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-localStorage.getItem('token')      },
+        "auth-token": Cookies.get('token')
+      },
     });
 
     const json = await response.json();
@@ -27,8 +28,8 @@ localStorage.getItem('token')      },
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-localStorage.getItem('token')      },
+        "auth-token": Cookies.get('token')
+      },
       body: JSON.stringify({ title, description, tag }),
     });
     const note = await response.json();
@@ -41,8 +42,8 @@ localStorage.getItem('token')      },
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-localStorage.getItem('token')      },
+        "auth-token": Cookies.get('token')
+      },
     });
     const json = await response.json();
     console.log(json);
@@ -59,8 +60,8 @@ localStorage.getItem('token')      },
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-localStorage.getItem('token')      },
+        "auth-token": Cookies.get('token')
+      },
       body: JSON.stringify({ title, description, tag }),
     });
     const json = await response.json();

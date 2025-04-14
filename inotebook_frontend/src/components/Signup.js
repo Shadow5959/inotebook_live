@@ -28,7 +28,8 @@ const Signup = (props) => {
     const json = await response.json();
 
     if (json && json.success) {
-      localStorage.setItem("token", json.authToken);
+      // Store token securely in an httpOnly cookie on the server-side
+      document.cookie = `token=${json.authToken}; path=/; secure; samesite=strict`;
       navigate("/");
       props.showAlert("Account created successfully", "success");
     } else {
