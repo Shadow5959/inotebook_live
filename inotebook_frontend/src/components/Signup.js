@@ -9,7 +9,7 @@ const Signup = (props) => {
     cpassword: "",
   });
   let navigate = useNavigate();
-  let host = process.env.REACT_APP_HOST;
+  let host ="https://inotebooklive-production.up.railway.app";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -8,7 +8,7 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`https://inotebooklive-production.up.railway.app/api/auth/login`, {
+    const response = await fetch(`https://inotebooklive-production.up.railway.app`, {
       method: "POST",
       headers: {
       "Content-Type": "application/json",
