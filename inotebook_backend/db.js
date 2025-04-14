@@ -4,7 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 
 const connectToMongo = () => {
-    mongoose.connect(process.env.MONGO_URI)
+    mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.error("Could not connect to MongoDB", err));
 
