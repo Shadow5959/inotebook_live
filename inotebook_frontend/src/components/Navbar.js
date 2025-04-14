@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie';
 
 const Navbar = ({ mode, toggleMode }) => {
   let navigate = useNavigate();
